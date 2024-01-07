@@ -17,7 +17,7 @@ watch(
 <template>
   <footer>
     <section>
-      <div class="bg-rose-400 py-0.5">
+      <div class="py-0.5">
         <!--   Нужен логотип или название   -->
         <div class="w-fit mx-auto">LG</div>
       </div>

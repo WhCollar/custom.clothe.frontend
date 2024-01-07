@@ -16,7 +16,10 @@ const router = useRouter();
       :route-name="item.routeName"
       :hash="item.hash"
       :as-button="item.asButton"
-      :vertical="vertical"
+      :class="{
+        'mr-[64px]': !vertical,
+        'w-full mb-5': vertical,
+      }"
       @click="(e) => router.push(e)"
     />
   </div>

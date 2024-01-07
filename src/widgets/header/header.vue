@@ -16,26 +16,31 @@ watch(
 </script>
 
 <template>
-  <header :class="`h-[64px] text-zinc-700`">
-    <Container class="h-full flex justify-between items-center">
-      <!--   Нужен логотип или название   -->
+  <header>
+    <Container class="bg-girl bg-no-repeat bg-right bg-contain">
       <div
-        class="font-semibold text-2xl cursor-pointer"
-        @click="router.push({ name: RouterEnum.Main })"
+        class="h-[64px] text-zinc-700 flex items-center max-sm:justify-between"
       >
-        LG
-      </div>
-      <Menu class="max-sm:hidden" :items="menuItems" />
-      <div class="sm:hidden">
-        <div @click="isMobileMenuShow = !isMobileMenuShow">
-          <Bars3 />
+        <!--   Нужен логотип или название   -->
+        <div
+          class="font-semibold text-6xl cursor-pointer md:mr-[64px]"
+          @click="router.push({ name: RouterEnum.Main })"
+        >
+          LG
         </div>
-        <Drawer v-model:show="isMobileMenuShow">
-          <template #content>
-            <Menu vertical :items="menuItems" />
-          </template>
-        </Drawer>
+        <Menu class="max-sm:hidden text-2xl" :items="menuItems" />
+        <div class="sm:hidden">
+          <div @click="isMobileMenuShow = !isMobileMenuShow">
+            <Bars3 />
+          </div>
+          <Drawer v-model:show="isMobileMenuShow">
+            <template #content>
+              <Menu vertical :items="menuItems" />
+            </template>
+          </Drawer>
+        </div>
       </div>
+      <slot />
     </Container>
   </header>
 </template>

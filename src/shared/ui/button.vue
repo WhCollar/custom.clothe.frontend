@@ -1,6 +1,22 @@
+<script setup lang="ts">
+withDefaults(
+  defineProps<{
+    type?: 'primary' | 'ghost';
+  }>(),
+  {
+    type: 'primary',
+  },
+);
+</script>
+
 <template>
   <button
-    class="font-medium text-lg px-3 py-0.5 rounded-lg border border-zinc-400"
+    :type="type"
+    class="text-2xl px-9 py-3 rounded-lg border-dark-gray"
+    :class="{
+      'bg-primary-button text-primary-button': type == 'primary',
+      'border border-dark-gray': type == 'ghost',
+    }"
   >
     <slot />
   </button>
