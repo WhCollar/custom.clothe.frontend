@@ -38,10 +38,12 @@ const router = useRouter();
   </Header>
   <section class="bg-no-repeat bg-right-bottom bg-graffiti-2-half-1">
     <div class="bg-no-repeat bg-left-top bg-graffiti-1-half-2">
-      <Container class="h-96"> Преимущества </Container>
+      <Container class="py-40">
+        <div>Преимущества</div>
+      </Container>
     </div>
   </section>
-  <section class="bg-no-repeat bg-left-bottom bg-graffiti-3-half-1">
+  <section class="bg-section bg-no-repeat bg-left-bottom bg-graffiti-3-half-1">
     <div class="bg-no-repeat bg-right-top bg-graffiti-2-half-2">
       <Container class="h-96">
         Продащий текст, возможно секция "О нас"
