@@ -2,15 +2,17 @@
 import { useRouter } from 'vue-router';
 import { Footer } from 'widgets/footer';
 import { Header } from 'widgets/header';
+import { RequestForm } from 'features/rquest.form';
+import { Config } from 'entities/static';
 import { RouterEnum } from 'shared/model/router';
-import { Container, Button } from 'shared/ui';
+import { Container, Button, TelegramButton } from 'shared/ui';
 
 const router = useRouter();
 </script>
 
 <template>
   <Header class="bg-section bg-no-repeat bg-left-bottom bg-graffiti-1-half-1">
-    <div class="py-32 leading-[95px]">
+    <div class="py-32 leading-[70px]">
       <div class="mb-10">
         <h2 class="text-[64px]">
           Авторская кастомизаци <br />
@@ -28,7 +30,7 @@ const router = useRouter();
           Заказать кастом
         </Button>
         <Button
-          type="ghost"
+          styleType="ghost"
           @click="router.push({ name: RouterEnum.Main, hash: '#works' })"
         >
           Перейти к работам
@@ -55,9 +57,30 @@ const router = useRouter();
       <Container class="h-96"> Примеры работ </Container>
     </div>
   </section>
-  <section class="bg-section">
-    <Container class="h-96">
-      Форма с для отправки заявки и ссылки на социальные сети
+  <section class="bg-section bg-no-repeat bg-cover bg-request-form-section">
+    <Container>
+      <div></div>
+      <div
+        class="bg-section h-full flex justify-center items-center py-16"
+        style="clip-path: polygon(0 0, 85% 0, 100% 100%, 15% 100%)"
+      >
+        <div class="h-full">
+          <div class="mb-8 text-4xl">Закажите прямо сейчас</div>
+          <RequestForm class="mb-8" />
+          <div>
+            <div class="mb-2">
+              <span>SocialMedia ;)</span>
+            </div>
+            <TelegramButton
+              :share-url="Config.telegramButton.shareUrl"
+              :size="Config.telegramButton.size"
+              :comment="Config.telegramButton.comment"
+              :text="Config.telegramButton.text"
+            />
+          </div>
+        </div>
+      </div>
+      <div></div>
     </Container>
   </section>
   <Footer />

@@ -14,6 +14,8 @@ module.exports = {
       'dark-gray': '#343434',
     },
     backgroundImage: {
+      'request-form-section':
+        'url("./src/shared/ui/assets/request-form-section-background.jpg")',
       girl: 'url("./src/shared/ui/assets/girl.jpg")',
       'graffiti-1-half-1': 'url("./src/shared/ui/assets/graffiti-1/1.png")',
       'graffiti-1-half-2': 'url("./src/shared/ui/assets/graffiti-1/2.png")',
